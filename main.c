@@ -26,7 +26,7 @@ int main(){
 	random_int(a, 10);
 	printf("Original numbers\n");
 	print_array(a, 10);
-	file = open("foo.txt", O_WRONLY, 0700);
+	file = open("foo.txt", O_WRONLY);
 	if (file == -1){
 		printf("Cannot open file.\n");
 	}
@@ -36,7 +36,7 @@ int main(){
 	}
 	close(file);
 	unsigned int b[10];
-	file = open("foo.txt", O_RDONLY, 0700);
+	file = open("foo.txt", O_RDONLY);
 	if (file == -1){
 		printf("Cannot open file.\n");
 	}
