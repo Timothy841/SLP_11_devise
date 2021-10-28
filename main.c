@@ -7,9 +7,8 @@
 #include <unistd.h>
 
 void random_int(int *a, int size){
-	for (int i = 0; i<size; i++){
-		a[i] = rand();
-	}
+	int f = open("/dev/random", O_RDONLY);
+	read(f, a, size*sizeof(a[0]));
 }
 
 void print_array(int *a, int size){
